@@ -7,9 +7,14 @@ namespace WpfAppDependencyInjection
     {
         public MainWindowModel()
         {
-            ViewModel.MyText = "Test text";
+            // capture commands
             ViewModel.ButtonClick = new RelayCommand(ButtonClick);
             ViewModel.ClosedCommand = new RelayCommand(Closed);
+
+            ViewModel.MyText = "Test text";
+
+            ViewModel.Items.Add(new MainWindowViewModel.NameCategory { Name = "This is an item", Category = "Red" });
+            ViewModel.Items.Add(new MainWindowViewModel.NameCategory { Name = "This is another item", Category = "Blue" });
         }
 
         private void ButtonClick(object commandParameter)
