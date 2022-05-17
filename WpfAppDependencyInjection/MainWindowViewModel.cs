@@ -3,6 +3,13 @@ using System.Windows.Input;
 
 namespace WpfAppDependencyInjection
 {
+    public class NameCategory
+    {
+        public string Name { get; set; }
+        public string Category { get; set; }
+    }
+
+
     public class MainWindowViewModel : ViewModelBase
     {
         private ICommand _buttonClick;
@@ -23,13 +30,6 @@ namespace WpfAppDependencyInjection
         {
             get => _myText;
             set => SetField(ref _myText, value);
-        }
-
-
-        public class NameCategory
-        {
-            public string Name { get; set; }
-            public string Category { get; set; }
         }
 
         public ObservableCollection<NameCategory> Items { get; } = new();

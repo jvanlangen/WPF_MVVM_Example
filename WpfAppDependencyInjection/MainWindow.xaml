@@ -7,16 +7,20 @@
         Title="MainWindow" Height="450" Width="800">
     <StackPanel>
         <TextBlock Text="{Binding MyText}" />
-        
+
         <Button Command="{Binding ButtonClick}" CommandParameter="Klaas" Width="100" Height="30">Test 1</Button>
 
-        <ListBox ItemsSource="{Binding Items}">
+        <ListBox ItemsSource="{Binding Items}" Grid.IsSharedSizeScope="true">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Name}" />
-                        <TextBlock Text="{Binding Category}" Foreground="Red" />
-                    </StackPanel>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition SharedSizeGroup="NameColumn" Width="auto" />
+                            <ColumnDefinition SharedSizeGroup="CategoryColumn" Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Margin="2" Text="{Binding Name}" />
+                        <TextBlock Grid.Column="1" Margin="2" Text="{Binding Category}" Foreground="Red" />
+                    </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>

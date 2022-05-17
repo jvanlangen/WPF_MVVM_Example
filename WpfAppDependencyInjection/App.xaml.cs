@@ -19,6 +19,7 @@ namespace WpfAppDependencyInjection
 
         private void ConfigureServices(ServiceCollection services)
         {
+            // the MainWindowModel should be added when using DI.
             services.AddSingleton<MainWindowModel>();
             //services.AddLogging(builder =>
             // {
@@ -30,10 +31,11 @@ namespace WpfAppDependencyInjection
         {
             base.OnStartup(e);
 
-            // using dependency injection.
-            //var mainWindowModel = _serviceProvider.GetRequiredService<MainWindowModel>();
+            //var mainWindowModel = new MainWindowModel();
 
-            var mainWindowModel = new MainWindowModel();
+            // using dependency injection.
+            var mainWindowModel = _serviceProvider.GetRequiredService<MainWindowModel>();
+            
             mainWindowModel.Show();
         }
     }

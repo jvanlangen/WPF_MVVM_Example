@@ -13,8 +13,8 @@ namespace WpfAppDependencyInjection
 
             ViewModel.MyText = "Test text";
 
-            ViewModel.Items.Add(new MainWindowViewModel.NameCategory { Name = "This is an item", Category = "Red" });
-            ViewModel.Items.Add(new MainWindowViewModel.NameCategory { Name = "This is another item", Category = "Blue" });
+            ViewModel.Items.Add(new NameCategory { Name = "This is an item", Category = "Red" });
+            ViewModel.Items.Add(new NameCategory { Name = "This is another item", Category = "Blue" });
         }
 
         private void ButtonClick(object commandParameter)
