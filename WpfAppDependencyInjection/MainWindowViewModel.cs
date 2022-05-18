@@ -22,6 +22,13 @@ namespace WpfAppDependencyInjection
             set => SetField(ref _buttonClick, value);
         }
 
+        private ICommand _addItemCommand;
+        public ICommand AddItemCommand
+        {
+            get => _addItemCommand;
+            set => SetField(ref _addItemCommand, value);
+        }
+
         private string _myText;
         /// <summary>
         /// MyText string.

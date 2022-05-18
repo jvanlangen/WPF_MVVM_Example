@@ -9,6 +9,7 @@
         <TextBlock Text="{Binding MyText}" />
 
         <Button Command="{Binding ButtonClick}" CommandParameter="Klaas" Width="100" Height="30">Test 1</Button>
+        <Button Command="{Binding AddItemCommand}" CommandParameter="Henk" Width="100" Height="30">Add item</Button>
 
         <ListBox ItemsSource="{Binding Items}" Grid.IsSharedSizeScope="true">
             <ListBox.ItemTemplate>
